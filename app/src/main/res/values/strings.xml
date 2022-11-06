@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ecommerce_splash_title">Ecommerce \n Concept</string>
     <string name="ellipse">ellipse</string>
+    <string name="title_location">Zihuatanejo, Gro</string>
+    <string name="select_categories">Select Category</string>
+    <string name="view_all">view all</string>
 </resources>

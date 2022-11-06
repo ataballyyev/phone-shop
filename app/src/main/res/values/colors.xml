@@ -4,5 +4,6 @@
     <color name="second">#010035</color>
     <color name="white">#FFFFFF</color>
     <color name="light_grey">#D7E1DEDE</color>
+    <color name="black">#000000</color>
 
 </resources>

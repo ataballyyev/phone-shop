@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.phoneshop.R
 import com.example.phoneshop.databinding.FragmentSplashBinding
 
@@ -21,8 +22,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(SplashFramentDirections)
+            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
         }, 2000)
-
     }
 }
