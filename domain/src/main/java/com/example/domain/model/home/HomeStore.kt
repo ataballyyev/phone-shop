@@ -1,4 +1,4 @@
-package com.example.domain.model
+package com.example.domain.model.home
 
 data class HomeStore(
     val id: Int,

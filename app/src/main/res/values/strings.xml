@@ -8,4 +8,7 @@
     <string name="select_categories">Select Category</string>
     <string name="view_all">view all</string>
     <string name="search">Search</string>
+    <string name="hot_sales">Hot Sales</string>
+    <string name="see_more">see more</string>
+    <string name="buy_now">Buy now!</string>
 </resources>

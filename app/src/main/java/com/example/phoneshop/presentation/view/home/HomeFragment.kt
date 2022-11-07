@@ -1,22 +1,25 @@
 package com.example.phoneshop.presentation.view.home
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.domain.model.CategoryModel
+import com.example.domain.model.home.CategoryModel
 import com.example.phoneshop.R
 import com.example.phoneshop.databinding.FragmentHomeBinding
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
+import com.smarteist.autoimageslider.SliderView
 
 class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemClickListener {
 
     private lateinit var binding: FragmentHomeBinding
-    private val adapter = CategoryAdapter()
+    private val categoryAdapter = CategoryAdapter()
+    private val sliderAdapter = ImageSliderAdapter()
 
     private var listCategories: List<CategoryModel> = listOf(
         CategoryModel(title = "Phones", R.drawable.category_image_phone),
@@ -29,19 +32,31 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemCli
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
 
-        initializeRecyclerView()
+        initializeUIElements()
 
     }
 
-    private fun initializeRecyclerView() {
-        binding.recyclerViewCategory.adapter = adapter
+    private fun initializeUIElements() {
+        binding.recyclerViewCategory.adapter = categoryAdapter
         binding.recyclerViewCategory.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        adapter.initializeItemClickListener(this)
-        adapter.initializeList(listCategories)
+        categoryAdapter.initializeItemClickListener(this)
+        categoryAdapter.initializeList(listCategories)
+
+        binding.imageSlider.setSliderAdapter(sliderAdapter)
+        binding.imageSlider.apply {
+            setIndicatorAnimation(IndicatorAnimationType.WORM)
+            setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
+            autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH
+            indicatorSelectedColor = Color.WHITE
+            indicatorUnselectedColor = Color.GRAY
+            scrollTimeInSec = 4
+            startAutoCycle()
+        }
+
     }
 
     override fun onItemClick(imageView: ImageView) {
-        adapter.refreshAllElementsColors()
+        categoryAdapter.refreshAllElementsColors()
         imageView.setBackgroundResource(R.color.main)
         DrawableCompat.setTint(imageView.drawable, ContextCompat.getColor(imageView.context, R.color.white))
     }

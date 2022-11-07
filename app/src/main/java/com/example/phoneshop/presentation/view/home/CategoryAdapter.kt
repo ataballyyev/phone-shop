@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.domain.model.CategoryModel
+import com.example.domain.model.home.CategoryModel
 import com.example.phoneshop.R
 
 class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
