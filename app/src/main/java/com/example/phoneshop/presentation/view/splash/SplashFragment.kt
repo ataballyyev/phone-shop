@@ -22,7 +22,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
+            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToBlankFragment())
         }, 2000)
     }
 }
