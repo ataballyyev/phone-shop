@@ -1,0 +1,14 @@
+package com.example.phoneshop.di.component
+
+import com.example.data.di.NetworkModule
+import com.example.phoneshop.presentation.view.home.HomeFragment
+import dagger.Component
+
+@Component(
+    modules = [NetworkModule::class]
+)
+interface AppComponent {
+
+    fun inject(fragment: HomeFragment)
+
+}

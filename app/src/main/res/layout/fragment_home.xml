@@ -34,7 +34,7 @@
             android:fontFamily="@font/marc_pro"
             android:text="@string/title_location"
             android:textColor="@color/second"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/imageArrowDownLocation"
@@ -67,7 +67,7 @@
         android:fontFamily="@font/marc_pro"
         android:text="@string/select_categories"
         android:textColor="@color/second"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayoutLocation" />
@@ -81,7 +81,7 @@
         android:fontFamily="@font/marc_pro"
         android:text="@string/view_all"
         android:textColor="@color/main"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/textSelectCategory" />
@@ -157,7 +157,7 @@
         android:fontFamily="@font/marc_pro"
         android:text="@string/hot_sales"
         android:textColor="@color/second"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraintLayoutSearching" />
@@ -171,7 +171,7 @@
         android:fontFamily="@font/marc_pro"
         android:text="@string/see_more"
         android:textColor="@color/main"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/textHotSales" />
@@ -190,7 +190,7 @@
         <com.smarteist.autoimageslider.SliderView
             android:id="@+id/imageSlider"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             app:sliderAnimationDuration="600"
             app:sliderAutoCycleDirection="back_and_forth"
             app:sliderAutoCycleEnabled="true"

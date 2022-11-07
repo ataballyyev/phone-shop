@@ -17,7 +17,7 @@
         android:padding="12dp"
         android:text="New"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="8sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,8 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/marc_pro"
         android:text="Name"
-        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewNew" />
@@ -43,7 +44,8 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/marc_pro"
         android:text="Description"
-        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewNameProduct" />
@@ -57,7 +59,7 @@
         android:textAllCaps="false"
         android:paddingHorizontal="32dp"
         android:text="@string/buy_now"
-        app:backgroundTint="@color/light_grey"
+        app:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewDescription" />
 

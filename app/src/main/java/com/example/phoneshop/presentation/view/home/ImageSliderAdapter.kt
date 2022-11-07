@@ -50,7 +50,7 @@ class ImageSliderAdapter: SliderViewAdapter<ImageSliderAdapter.ImageSliderVH>() 
             })
     }
 
-    private fun initializeList(list: List<HomeStore>) {
+    fun initializeList(list: List<HomeStore>) {
         listHotSales = list
         notifyDataSetChanged()
     }

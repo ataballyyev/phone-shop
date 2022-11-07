@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.data.service.PhoneService
 import com.example.domain.model.home.HomeModel
@@ -21,11 +22,13 @@ class NetworkRepositoryImpl @Inject constructor(
                 .getHomeProducts(home = homeApi)
 
             if (response.code() == 200) {
+                Log.i("TAG", "RESPONSE SUCCESS")
                 NetworkResult.Success(response.body()!!)
             } else {
                 NetworkResult.Error(response.message())
             }
         } catch (e: Exception) {
+            Log.i("TAG", e.message.toString())
             NetworkResult.Error(e.message)
         } catch (e: SocketTimeoutException) {
             NetworkResult.Error(e.message)
