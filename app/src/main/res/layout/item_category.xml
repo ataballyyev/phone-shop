@@ -12,7 +12,7 @@
         android:layout_height="72dp"
         android:scaleType="center"
         android:src="@drawable/category_image_phone"
-        android:background="@color/main"
+        android:background="@color/white"
         android:elevation="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
