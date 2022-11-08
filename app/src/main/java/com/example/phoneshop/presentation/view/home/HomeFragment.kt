@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.common.Constants
 import com.example.domain.model.home.CategoryModel
@@ -33,6 +34,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemCli
     private lateinit var homeModel: HomeModel
     private val categoryAdapter = CategoryAdapter()
     private val sliderAdapter = ImageSliderAdapter()
+    private val bestSellerAdapter = BestSellerProductsAdapter()
 
     private var listCategories: List<CategoryModel> = listOf(
         CategoryModel(title = "Phones", R.drawable.category_image_phone),
@@ -89,9 +91,13 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemCli
             autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH
             indicatorSelectedColor = Color.WHITE
             indicatorUnselectedColor = Color.GRAY
-            scrollTimeInSec = 4
+            scrollTimeInSec = 3
             startAutoCycle()
         }
+
+        binding.recyclerViewBestSeller.adapter = bestSellerAdapter
+        binding.recyclerViewBestSeller.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+        bestSellerAdapter.initializeList(list = homeModel.best_seller)
 
     }
 
