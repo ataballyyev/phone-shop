@@ -5,13 +5,17 @@
       <map>
         <entry key="app/src/main/res/drawable/rounded_bottom_navigation.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/rounded_button.xml" value="0.1695" />
+        <entry key="app/src/main/res/drawable/rounded_dialog.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/rounded_done_button.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/rounded_edittext.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rounded_exit_button.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/rounded_textview.xml" value="0.1695" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2765625" />
         <entry key="app/src/main/res/layout/best_seller_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.2765625" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2565217391304348" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.2765625" />
+        <entry key="app/src/main/res/layout/fragment_product_filter.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.165" />
         <entry key="app/src/main/res/layout/image_slider_item.xml" value="0.2755208333333333" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.2755208333333333" />

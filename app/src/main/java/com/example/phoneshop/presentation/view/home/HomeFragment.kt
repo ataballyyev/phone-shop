@@ -19,6 +19,7 @@ import com.example.domain.model.network_result.NetworkResult
 import com.example.phoneshop.R
 import com.example.phoneshop.app.PhoneShopApplication
 import com.example.phoneshop.databinding.FragmentHomeBinding
+import com.example.phoneshop.presentation.view.product_filter.ProductFilterFragment
 import com.example.phoneshop.presentation.viewmodel.MainViewModel
 import com.example.phoneshop.presentation.viewmodel_factory.MainViewModelFactory
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
@@ -52,6 +53,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemCli
 
         sendRequestHomeProducts()
 
+        binding.imageViewFilter.setOnClickListener {
+            val bottomSheetDialog = ProductFilterFragment()
+            bottomSheetDialog.show(childFragmentManager, bottomSheetDialog.tag)
+        }
     }
 
     private fun sendRequestHomeProducts() {
