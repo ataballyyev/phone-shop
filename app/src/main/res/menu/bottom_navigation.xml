@@ -3,7 +3,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/bookingFormFragment"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/search_icon"
         app:iconTint="@color/white"
         android:title="Explore"
@@ -11,19 +11,19 @@
         app:itemIconSize="24dp" />
 
     <item
-        android:id="@+id/passengersFragment"
+        android:id="@+id/shoppingFragment"
         android:icon="@drawable/shopping_icon"
         android:title="Shopping"
         android:label="Shopping"/>
 
     <item
-        android:id="@+id/ticketsFragment"
+        android:id="@+id/healthFragment"
         android:icon="@drawable/health_icon"
         android:title="Health"
         android:label="Health"/>
 
     <item
-        android:id="@+id/othersFragment"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/person_icon"
         android:title="Profile"
         android:label="Profile"/>
