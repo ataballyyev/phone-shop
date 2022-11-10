@@ -9,5 +9,4 @@ interface GetHomeProductsUseCase {
         homeApi: String
     ): NetworkResult<HomeModel>
 
-
 }

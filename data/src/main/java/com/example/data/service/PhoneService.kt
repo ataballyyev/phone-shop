@@ -1,6 +1,7 @@
 package com.example.data.service
 
 import com.example.domain.model.home.HomeModel
+import com.example.domain.model.product_detail_model.ProductDetailModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,5 +13,9 @@ interface PhoneService {
         @Path("HOME_API") home: String
     ): Response<HomeModel>
 
+    @GET("/v3/{PRODUCT_DETAIL_API}")
+    suspend fun getProductDetails(
+        @Path("PRODUCT_DETAIL_API") productDetailApi: String
+    ): Response<ProductDetailModel>
 
 }

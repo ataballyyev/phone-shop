@@ -27,7 +27,9 @@ import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 import javax.inject.Inject
 
-class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemClickListener {
+class HomeFragment : Fragment(R.layout.fragment_home),
+    CategoryAdapter.OnItemClickListener,
+    BestSellerProductsAdapter.OnItemClickListener {
 
     private lateinit var binding: FragmentHomeBinding
     @Inject lateinit var viewModelFactory: MainViewModelFactory
@@ -100,6 +102,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemCli
             startAutoCycle()
         }
 
+        bestSellerAdapter.initializeOnClickListener(this)
         binding.recyclerViewBestSeller.adapter = bestSellerAdapter
         binding.recyclerViewBestSeller.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         bestSellerAdapter.initializeList(list = homeModel.best_seller)
@@ -110,5 +113,9 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.OnItemCli
         categoryAdapter.refreshAllElementsColors()
         imageView.setBackgroundResource(R.color.main)
         DrawableCompat.setTint(imageView.drawable, ContextCompat.getColor(imageView.context, R.color.white))
+    }
+
+    override fun onClick(position: Int) {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment())
     }
 }

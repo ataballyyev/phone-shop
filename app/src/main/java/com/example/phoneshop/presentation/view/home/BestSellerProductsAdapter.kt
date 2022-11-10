@@ -13,12 +13,21 @@ import com.example.phoneshop.R
 class BestSellerProductsAdapter: RecyclerView.Adapter<BestSellerProductsAdapter.BestSellerProductsVH>() {
 
     private var listBestSeller: List<BestSeller> = emptyList()
+    private lateinit var onItemClickListener: OnItemClickListener
 
-    class BestSellerProductsVH(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class BestSellerProductsVH(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener {
         var image: ImageView = itemView.findViewById(R.id.imageProduct)
         var discountPrice: TextView = itemView.findViewById(R.id.textDiscountPrice)
         var withoutDiscountPrice: TextView = itemView.findViewById(R.id.textWithoutDiscountPrice)
         var titleProduct: TextView = itemView.findViewById(R.id.textTitleProduct)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(p0: View?) {
+            onItemClickListener.onClick(adapterPosition)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerProductsVH {
@@ -41,5 +50,13 @@ class BestSellerProductsAdapter: RecyclerView.Adapter<BestSellerProductsAdapter.
     fun initializeList(list: List<BestSeller>) {
         listBestSeller = list
         notifyDataSetChanged()
+    }
+
+    fun initializeOnClickListener(listener: OnItemClickListener) {
+        onItemClickListener = listener
+    }
+
+    interface OnItemClickListener {
+        fun onClick(position: Int)
     }
 }

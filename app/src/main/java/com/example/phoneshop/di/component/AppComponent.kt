@@ -1,6 +1,7 @@
 package com.example.phoneshop.di.component
 
 import com.example.data.di.NetworkModule
+import com.example.phoneshop.presentation.view.detail.DetailsFragment
 import com.example.phoneshop.presentation.view.home.HomeFragment
 import dagger.Component
 
@@ -10,5 +11,6 @@ import dagger.Component
 interface AppComponent {
 
     fun inject(fragment: HomeFragment)
+    fun inject(fragment: DetailsFragment)
 
 }
