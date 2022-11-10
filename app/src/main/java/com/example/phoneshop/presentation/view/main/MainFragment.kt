@@ -18,22 +18,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         val navHost = (childFragmentManager.findFragmentById(R.id.fragmentContainer)) as NavHostFragment
         val navController = navHost.navController
 
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId) {
-                R.id.homeFragment -> {
-                    navController.navigate(R.id.action_detailsFragment_to_homeFragment)
-                    true
-                }
-                R.id.shoppingFragment -> {
-                    navController.navigate(R.id.action_homeFragment_to_detailsFragment)
-                    true
-                }
-                else -> {
-                    true
-                }
-            }
-        }
-
     }
 
 }
