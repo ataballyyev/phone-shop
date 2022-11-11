@@ -17,4 +17,9 @@
     <string name="price">Price</string>
     <string name="size">Size</string>
     <string name="product_details">Product Details</string>
+    <string name="exynos_990">Exynos 990</string>
+    <string name="_108_12_mp">108 + 12 mp</string>
+    <string name="_8_gb">8 GB</string>
+    <string name="_256_gb">256 GB</string>
+    <string name="galaxy_note_20_ultra">Galaxy Note 20 Ultra</string>
 </resources>

@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.constraintlayout.helper.widget.Carousel
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -39,6 +41,22 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory)[MainViewModel::class.java]
 
         sendRequestProductDetails()
+        binding.apply {
+            backButton.setOnClickListener {
+                findNavController().popBackStack()
+            }
+            tabLayout.addTab(tabLayout.newTab().setText("Shop"))
+            tabLayout.addTab(tabLayout.newTab().setText("Details"))
+            tabLayout.addTab(tabLayout.newTab().setText("Features"))
+            colorFirst.setOnClickListener {
+                imageViewFirstColor.isVisible = true
+                imageViewSecondColor.isVisible = false
+            }
+            colorSecond.setOnClickListener {
+                imageViewSecondColor.isVisible = true
+                imageViewFirstColor.isVisible = false
+            }
+        }
 
     }
 
