@@ -1,9 +1,11 @@
 package com.example.phoneshop.presentation.view.detail
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.helper.widget.Carousel
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -33,6 +35,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     private lateinit var productDetailModel: ProductDetailModel
     private var adapter = ProductImagesAdapter()
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailsBinding.bind(view)
@@ -55,6 +58,18 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             colorSecond.setOnClickListener {
                 imageViewSecondColor.isVisible = true
                 imageViewFirstColor.isVisible = false
+            }
+            button128.setOnClickListener {
+                button128.background = requireContext().getDrawable(R.drawable.rounded_done_button)
+                button128.setTextColor(requireContext().getColor(R.color.white))
+                button256.background = requireContext().getDrawable(R.color.white)
+                button256.setTextColor(requireContext().getColor(R.color.second))
+            }
+            button256.setOnClickListener {
+                button256.background = requireContext().getDrawable(R.drawable.rounded_done_button)
+                button256.setTextColor(requireContext().getColor(R.color.white))
+                button128.background = requireContext().getDrawable(R.color.white)
+                button128.setTextColor(requireContext().getColor(R.color.second))
             }
         }
 
