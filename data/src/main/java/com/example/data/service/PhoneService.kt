@@ -1,5 +1,6 @@
 package com.example.data.service
 
+import com.example.domain.model.basket.BasketModel
 import com.example.domain.model.home.HomeModel
 import com.example.domain.model.product_detail_model.ProductDetailModel
 import retrofit2.Response
@@ -17,5 +18,10 @@ interface PhoneService {
     suspend fun getProductDetails(
         @Path("PRODUCT_DETAIL_API") productDetailApi: String
     ): Response<ProductDetailModel>
+
+    @GET("/v3/{BASKET_PRODUCTS_API}")
+    suspend fun getBasketProducts(
+        @Path("BASKET_PRODUCTS_API") basketProductsApi: String
+    ): Response<BasketModel>
 
 }

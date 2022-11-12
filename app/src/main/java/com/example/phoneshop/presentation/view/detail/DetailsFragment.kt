@@ -71,6 +71,9 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 button128.background = requireContext().getDrawable(R.color.white)
                 button128.setTextColor(requireContext().getColor(R.color.second))
             }
+            shopButton.setOnClickListener {
+                findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToCartFragment())
+            }
         }
 
     }

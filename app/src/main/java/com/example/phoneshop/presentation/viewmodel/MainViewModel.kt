@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.data.use_case.GetBasketProductsUseCaseImpl
 import com.example.data.use_case.GetHomeProductsUseCaseImpl
 import com.example.data.use_case.GetProductDetailsUseCaseImpl
+import com.example.domain.model.basket.BasketModel
 import com.example.domain.model.home.HomeModel
 import com.example.domain.model.network_result.NetworkResult
 import com.example.domain.model.product_detail_model.ProductDetailModel
@@ -14,7 +16,8 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
     private val getHomeProductsUseCaseImpl: GetHomeProductsUseCaseImpl,
-    private val getProductDetailsUseCaseImpl: GetProductDetailsUseCaseImpl
+    private val getProductDetailsUseCaseImpl: GetProductDetailsUseCaseImpl,
+    private val getBasketProductsUseCaseImpl: GetBasketProductsUseCaseImpl
 ): ViewModel() {
 
     private var mHomeProducts = MutableLiveData<NetworkResult<HomeModel>>()
@@ -22,6 +25,9 @@ class MainViewModel @Inject constructor(
 
     private var mProductDetails = MutableLiveData<NetworkResult<ProductDetailModel>>()
     val liveProductDetails: LiveData<NetworkResult<ProductDetailModel>> get() = mProductDetails
+
+    private var mBasketProducts = MutableLiveData<NetworkResult<BasketModel>>()
+    val liveBasketProducts: LiveData<NetworkResult<BasketModel>> get() = mBasketProducts
 
     fun getHomeProducts(homeApi: String) {
         viewModelScope.launch {
@@ -32,6 +38,12 @@ class MainViewModel @Inject constructor(
     fun getProductDetails(productDetailsApi: String) {
         viewModelScope.launch {
             mProductDetails.value = getProductDetailsUseCaseImpl.getProductDetails(productDetailApi = productDetailsApi)
+        }
+    }
+
+    fun getBasketProducts(basketProductsApi: String) {
+        viewModelScope.launch {
+            mBasketProducts.value = getBasketProductsUseCaseImpl.getBasketProducts(basketProductsApi = basketProductsApi)
         }
     }
 
