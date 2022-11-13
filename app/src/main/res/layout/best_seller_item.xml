@@ -21,6 +21,7 @@
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:scaleType="center"
+            android:padding="23dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +69,16 @@
             app:layout_constraintTop_toBottomOf="@id/textWithoutDiscountPrice"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"/>
+
+        <ImageView
+            android:id="@+id/imageViewLikeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/unlike"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

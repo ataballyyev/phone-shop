@@ -68,5 +68,8 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         binding.recyclerViewSavedProducts.adapter = adapter
         binding.recyclerViewSavedProducts.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         adapter.initialize(list = basketProductModel.basket)
+
+        binding.textTotalPriceValue.text = "$${basketProductModel.total}"
+        binding.textDeliveryPriceValue.text = basketProductModel.delivery
     }
 }

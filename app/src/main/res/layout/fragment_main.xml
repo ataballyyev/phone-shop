@@ -34,10 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:background="@drawable/rounded_bottom_navigation"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
         android:paddingVertical="4dp"
-        app:labelVisibilityMode="unlabeled"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_navigation" />

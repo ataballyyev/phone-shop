@@ -11,7 +11,6 @@ interface NetworkRepository {
         homeApi: String
     ): NetworkResult<HomeModel>
 
-
     suspend fun getProductDetails(
         productDetailApi: String
     ): NetworkResult<ProductDetailModel>

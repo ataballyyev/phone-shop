@@ -1,5 +1,6 @@
 package com.example.phoneshop.presentation.view.home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.example.phoneshop.R
 class BestSellerProductsAdapter: RecyclerView.Adapter<BestSellerProductsAdapter.BestSellerProductsVH>() {
 
     private var listBestSeller: List<BestSeller> = emptyList()
+    private var likedProducts: ArrayList<Boolean> = arrayListOf()
     private lateinit var onItemClickListener: OnItemClickListener
 
     inner class BestSellerProductsVH(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener {
@@ -20,9 +22,19 @@ class BestSellerProductsAdapter: RecyclerView.Adapter<BestSellerProductsAdapter.
         var discountPrice: TextView = itemView.findViewById(R.id.textDiscountPrice)
         var withoutDiscountPrice: TextView = itemView.findViewById(R.id.textWithoutDiscountPrice)
         var titleProduct: TextView = itemView.findViewById(R.id.textTitleProduct)
+        private var likeButton: ImageView = itemView.findViewById(R.id.imageViewLikeButton)
 
         init {
             itemView.setOnClickListener(this)
+            likeButton.setOnClickListener {
+                if (!likedProducts[adapterPosition]) {
+                    likeButton.setImageDrawable(likeButton.context.resources.getDrawable(R.drawable.like))
+                    likedProducts[adapterPosition] = true
+                } else {
+                    likeButton.setImageDrawable(likeButton.context.resources.getDrawable(R.drawable.unlike))
+                    likedProducts[adapterPosition] = false
+                }
+            }
         }
 
         override fun onClick(p0: View?) {
@@ -47,8 +59,12 @@ class BestSellerProductsAdapter: RecyclerView.Adapter<BestSellerProductsAdapter.
 
     override fun getItemCount() = listBestSeller.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun initializeList(list: List<BestSeller>) {
         listBestSeller = list
+        repeat(listBestSeller.size) {
+            likedProducts.add(false)
+        }
         notifyDataSetChanged()
     }
 

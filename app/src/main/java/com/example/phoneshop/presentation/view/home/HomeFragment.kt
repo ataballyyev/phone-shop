@@ -118,4 +118,5 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     override fun onClick(position: Int) {
         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment())
     }
+
 }
