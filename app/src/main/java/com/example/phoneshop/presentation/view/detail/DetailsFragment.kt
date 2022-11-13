@@ -34,6 +34,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     private lateinit var viewModel: MainViewModel
     private lateinit var productDetailModel: ProductDetailModel
     private var adapter = ProductImagesAdapter()
+    private var isLiked: Boolean = false
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,6 +74,15 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             }
             shopButton.setOnClickListener {
                 findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToCartFragment())
+            }
+            likeButton.setOnClickListener {
+                if (isLiked) {
+                    likeButton.setImageDrawable(requireContext().resources.getDrawable(R.drawable.unlike))
+                    isLiked = false
+                } else {
+                    likeButton.setImageDrawable(requireContext().resources.getDrawable(R.drawable.like))
+                    isLiked = true
+                }
             }
         }
 
