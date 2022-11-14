@@ -76,12 +76,12 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToCartFragment())
             }
             likeButton.setOnClickListener {
-                if (isLiked) {
+                isLiked = if (isLiked) {
                     likeButton.setImageDrawable(requireContext().resources.getDrawable(R.drawable.unlike))
-                    isLiked = false
+                    false
                 } else {
                     likeButton.setImageDrawable(requireContext().resources.getDrawable(R.drawable.like))
-                    isLiked = true
+                    true
                 }
             }
         }
