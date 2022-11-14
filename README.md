@@ -150,3 +150,5 @@ These are the app's screenshots:
 ![alt text](https://github.com/ataballyyev/phone-shop/blob/main/screenshots/screen_3.png)
 ![alt text](https://github.com/ataballyyev/phone-shop/blob/main/screenshots/screen_4.png)
 ![alt text](https://github.com/ataballyyev/phone-shop/blob/main/screenshots/screen_5.png)
+
+<p align="center"><video src="screenshots/video_screen.mp4"></p>
