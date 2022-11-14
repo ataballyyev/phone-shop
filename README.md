@@ -35,6 +35,8 @@ Clean architecture was proposed by [Robert C. Martin](https://en.wikipedia.org/w
 
 <p align="center"><img src="screenshots/clean_arch.png" alt="Clean Architecture Diagram"></p>
 
+![alt text](https://github.com/ataballyyev/phone-shop/blob/main/screenshots/clean_arch.png)
+
 The circles represent different layers of your app. Note that:
 
 - The center circle is the most abstract, and the outer circle is the most concrete. This is called the [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)). The Abstraction Principle specifies that inner circles should contain business logic, and outer circles should contain implementation details.
