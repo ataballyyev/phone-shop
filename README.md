@@ -144,3 +144,5 @@ In this section i've included resources that are not related to clean architectu
 
 ## Demo
 These are the app's screenshots:
+
+![alt text](https://github.com/ataballyyev/phone-shop/blob/main/screenshots/screen_1.png)
